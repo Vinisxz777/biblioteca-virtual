@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore nosso catálogo e sugira novos livros para a Biblioteca Virtual.">
+  <title>Biblioteca Virtual | Catálogo de Livros</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="topo">
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="#topo" aria-label="Biblioteca Virtual - página inicial">
+        <span class="brand-icon" aria-hidden="true">▤</span>
+        <span>Biblioteca <strong>Virtual</strong></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo de Livros</a>
+        <a href="#sugestoes">Sugerir Aquisição</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel catalog-panel" id="catalogo" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">EXPLORE E DESCUBRA</span>
+          <h1 id="catalog-title">Nosso Acervo</h1>
+        </div>
+        <span class="book-count" id="book-count">6 livros</span>
+      </div>
+
+      <div class="search-area">
+        <label for="busca">Pesquisar livro</label>
+        <div class="search-wrap">
+          <span aria-hidden="true" class="search-icon">⌕</span>
+          <input type="search" id="busca" placeholder="Digite o título do livro..." autocomplete="off">
+        </div>
+        <p class="search-hint">A busca é atualizada enquanto você digita.</p>
+      </div>
+
+      <ul class="book-grid" id="lista-livros">
+        <li><article class="book-card"><span class="book-number">01</span><span class="book-symbol" aria-hidden="true">◈</span><h2>O Senhor dos Anéis</h2><p>J. R. R. Tolkien</p><span class="book-tag">Fantasia</span></article></li>
+        <li><article class="book-card"><span class="book-number">02</span><span class="book-symbol" aria-hidden="true">⌁</span><h2>1984</h2><p>George Orwell</p><span class="book-tag">Ficção distópica</span></article></li>
+        <li><article class="book-card"><span class="book-number">03</span><span class="book-symbol" aria-hidden="true">❧</span><h2>Dom Casmurro</h2><p>Machado de Assis</p><span class="book-tag">Literatura brasileira</span></article></li>
+        <li><article class="book-card"><span class="book-number">04</span><span class="book-symbol" aria-hidden="true">✳</span><h2>Fundação</h2><p>Isaac Asimov</p><span class="book-tag">Ficção científica</span></article></li>
+        <li><article class="book-card"><span class="book-number">05</span><span class="book-symbol" aria-hidden="true">✧</span><h2>O Pequeno Príncipe</h2><p>Antoine de Saint-Exupéry</p><span class="book-tag">Fábula</span></article></li>
+        <li><article class="book-card"><span class="book-number">06</span><span class="book-symbol" aria-hidden="true">◌</span><h2>Fahrenheit 451</h2><p>Ray Bradbury</p><span class="book-tag">Ficção distópica</span></article></li>
+      </ul>
+      <p class="empty-state" id="sem-resultados" hidden>Nenhum livro encontrado. Tente pesquisar por outro título.</p>
+    </section>
+
+    <section class="panel suggestion-panel" id="sugestoes" aria-labelledby="suggestion-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FAÇA PARTE DO ACERVO</span>
+          <h2 id="suggestion-title">Sugerir Novo Livro</h2>
+        </div>
+        <span class="suggestion-icon" aria-hidden="true">✎</span>
+      </div>
+      <p class="section-description">Tem uma leitura para indicar? Envie sua sugestão para nossa biblioteca.</p>
+
+      <form id="form-sugestao" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="nome">Nome do leitor</label>
+          <input type="text" id="nome" name="nome" placeholder="Como podemos chamar você?" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="titulo">Título do livro</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Digite o nome da obra" required minlength="3">
+          <small>O título deve conter pelo menos 3 caracteres.</small>
+        </div>
+        <button type="submit">Enviar sugestão <span aria-hidden="true">→</span></button>
+        <p class="form-message" id="mensagem-formulario" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <a class="footer-brand" href="#topo">Biblioteca Virtual</a>
+      <p>Conhecimento que conecta. Histórias que transformam.</p>
+      <span>Projeto acadêmico • Desenvolvimento Web</span>
+      <a class="back-to-top" href="#topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
